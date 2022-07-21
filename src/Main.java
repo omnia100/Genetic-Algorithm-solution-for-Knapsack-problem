@@ -16,7 +16,7 @@ public class Main {
     }
 
 
-    static File outfile = new File("Answers.txt");
+    static File outfile = new File("output.txt");
     static PrintStream stream;
 
     static {
