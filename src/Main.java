@@ -16,6 +16,22 @@ public class Main {
     }
 
 
+    static File outfile = new File("Answers.txt");
+    static PrintStream stream;
+
+    static {
+        try {
+            stream = new PrintStream(outfile);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    static PrintStream console = System.out;
+
+
+    //System.setOut(console);
+
     static int testCases;
     static int[] weight;
     static int[] benefit;
@@ -36,8 +52,13 @@ public class Main {
     static double[] fitness;
     static int[] mating_pool;
 
+    public Main() throws FileNotFoundException {
+    }
+
 
     public static void main(String[] args) throws IOException {
+        System.setOut(stream);
+//        System.setOut(console);
 
         testCases = scanner.nextInt();
         for (int t = 0; t < testCases; t++) {
